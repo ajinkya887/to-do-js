@@ -1,3 +1,24 @@
 body{
     background-color: antiquewhite;
+    justify-content: center;
 }
+
+.title {
+    color: rgb(74, 87, 87);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#add-btn {
+    border-radius: 6px;
+    border-width: 2px;
+    width: 80px;
+    height: 25px;
+    text-align: center;
+    justify-content: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+  }

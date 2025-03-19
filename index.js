@@ -32,6 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
     deleteBtn.style.marginLeft = "10px";
     deleteBtn.addEventListener("click", () => deleteTodo(li, todoText));
     li.appendChild(deleteBtn);
+
+    const toggleBtn = document.createElement("button");
+    toggleBtn.textContent = "✅";
+    toggleBtn.style.marginLeft = "10px";
+    toggleBtn.addEventListener("click", () => toggleTodo(li, todoText));
+    li.append(toggleBtn);
     list.appendChild(li);
   }
 
@@ -58,6 +64,18 @@ document.addEventListener("DOMContentLoaded", () => {
         saveTodos();
         list.removeChild(li);
       }
+    }
+  }
+
+  function toggleTodo(li, todoText) {
+    li.classList.toggle("completed");
+    const index = todos.indexOf(todoText);
+    if (index !== -1) {
+      todos[index] = {
+        text: todoText,
+        completed: !todos[index].completed,
+      };
+      saveTodos();
     }
   }
 
